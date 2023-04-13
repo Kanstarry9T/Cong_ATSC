@@ -1,0 +1,6 @@
+{
+    "dir": "add_rush/haikou/",
+    "roadnetFile": "roadnet.txt",
+    "flowFile": "flow30.txt",
+    "routeFile": "nanchang.json"
+}

@@ -1,0 +1,6 @@
+{
+    "dir": "add_normal/baoding/",
+    "roadnetFile": "roadnet.txt",
+    "flowFile": "flow50.txt",
+    "routeFile": "nanchang.json"
+}

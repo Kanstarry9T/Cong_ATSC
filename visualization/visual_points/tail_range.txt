@@ -1,0 +1,69 @@
+
+    ]
+            }
+        };
+
+const range = {
+	'type': 'geojson',
+	'data': {
+		'type': 'Feature',
+		'geometry': {
+			'type': 'Polygon',
+			// These coordinates outline Maine.
+			'coordinates': [
+				[
+					[116.98881, 36.67309],
+					[116.98881, 36.6525],
+					[117.035, 36.6525],
+					[117.03397, 36.676],
+					[116.98881, 36.67309],
+				]
+			]
+		}
+	}
+};
+
+map.on('load', function() {
+	map.addSource('pSource', pointData);
+	map.addSource('maineSource', range);
+
+map.addLayer({
+            'id': 'points',
+            'type': 'circle',
+            'source': 'pSource',
+            'paint': {
+                     'circle-radius': 4,
+                     'circle-color': ['get', 'color'],
+ 		'circle-stroke-color': '#FFFFFF',
+                      'circle-stroke-width': 0.5
+            }
+        });
+
+map.addLayer({
+            'id': 'maine',
+            'type': 'fill',
+            'source': 'maineSource',
+	  'layout': {},
+            'paint': {
+                     'fill-color': '#0080FF',
+		'fill-opacity': 0.3
+            }
+        });
+
+map.addLayer({
+            'id': 'outline',
+            'type': 'line',
+            'source': 'maineSource',
+	  'layout': {},
+            'paint': {
+                     'line-color': '#0080FF',
+		'line-width': 3
+            }
+        });
+
+
+    });
+</script>
+
+</body>
+</html>

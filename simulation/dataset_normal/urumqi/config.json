@@ -1,0 +1,6 @@
+{
+    "dir": "dataset_normal/urumqi/",
+    "roadnetFile": "roadnet.txt",
+    "flowFile": "flow.txt",
+    "routeFile": "nanchang.json"
+}

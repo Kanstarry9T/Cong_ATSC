@@ -1,0 +1,112 @@
+
+    ]
+            }
+        };
+
+const range1 = {
+	'type': 'geojson',
+	'data': {
+		'type': 'Feature',
+		'geometry': {
+			'type': 'Polygon',
+			// These coordinates outline Maine.
+			'coordinates': [
+				[
+					[116.98881, 36.67309],
+					[116.98881, 36.6525],
+					[117.035, 36.6525],
+					[117.03397, 36.676],
+					[116.98881, 36.67309],
+				]
+			]
+		}
+	}
+};
+
+const range2 = {
+	'type': 'geojson',
+	'data': {
+		'type': 'Feature',
+		'geometry': {
+			'type': 'Polygon',
+			// These coordinates outline Maine.
+			'coordinates': [
+				[
+					[116.9594446, 36.65071843852322],
+					[117.02084459999999, 36.65071843852322],
+					[117.02084459999999, 36.67982056147678],
+					[116.9594446, 36.67982056147678],
+					[116.9594446, 36.65071843852322],
+				]
+			]
+		}
+	}
+};
+
+
+map.on('load', function() {
+	map.addSource('pSource', pointData);
+	map.addSource('maineSource', range1);
+	map.addSource('maineSource2', range2);
+
+map.addLayer({
+            'id': 'points',
+            'type': 'circle',
+            'source': 'pSource',
+            'paint': {
+                     'circle-radius': 4,
+                     'circle-color': ['get', 'color'],
+ 		'circle-stroke-color': '#FFFFFF',
+                      'circle-stroke-width': 0.5
+            }
+        });
+
+map.addLayer({
+            'id': 'maine',
+            'type': 'fill',
+            'source': 'maineSource',
+	  'layout': {},
+            'paint': {
+                     'fill-color': '#0080FF',
+		'fill-opacity': 0.1
+            }
+        });
+
+map.addLayer({
+            'id': 'outline',
+            'type': 'line',
+            'source': 'maineSource',
+	  'layout': {},
+            'paint': {
+                     'line-color': '#0080FF',
+		'line-width': 3
+            }
+        });
+map.addLayer({
+            'id': 'maine2',
+            'type': 'fill',
+            'source': 'maineSource2',
+	  'layout': {},
+            'paint': {
+                     'fill-color': '#FFFFFF',
+		'fill-opacity': 0.1
+            }
+        });
+
+map.addLayer({
+            'id': 'outline2',
+            'type': 'line',
+            'source': 'maineSource2',
+	  'layout': {},
+            'paint': {
+                     'line-color': '#FFFFFF',
+		'line-width': 3
+            }
+        });
+
+
+    });
+</script>
+
+</body>
+</html>

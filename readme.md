@@ -32,7 +32,7 @@ python tripGeneration.py
 After generation, the flow data `flow.txt` and the information of flows `info.json` for each city will be stored in `./generator/<city name>`. After generating the flow data, you may test them by following our simulation process.
 
 ### Docker Installation
-Make a CBEngine environment. Install CBEngine 0.0.1 with https://cbengine-documentation.readthedocs.io/en/latest/content/install.html Follow the installation guide and create a docker container with a conda environment named CBLab. Note that you are also required to install package `multiprocessing` as we used it to speed up simulation.
+Make a CBEngine environment. Install [CBEngine](https://cbengine-documentation.readthedocs.io/en/latest/content/cbengine/cbengine.html#using-docker). Follow the installation guide and create a docker container with a conda environment named CBLab. Note that you are also required to install package `multiprocessing` as we used it to speed up simulation.
 
 Then copy simulation part of this respository to your docker container.
 ```

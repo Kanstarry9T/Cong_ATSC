@@ -33,6 +33,7 @@ class TravelDistanceMetric():
 
         for vehicle in vehicles:
             veh_info = self.world.eng.get_vehicle_info(vehicle)
+            # print(veh_info)
             if self.vehicle_last_dis.get(vehicle) == None:
                 self.vehicle_last_dis[vehicle] = veh_info['distance'][0]
                 self.vehicle_last_place[vehicle] = veh_info['road'][0]

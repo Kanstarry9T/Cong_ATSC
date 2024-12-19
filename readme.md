@@ -1,11 +1,10 @@
-
 ## Prerequesites
 - Docker
 - Python 3.8
 
 ## Getting Started
 
-### Generation of flow
+### Generation
 
 #### What you need for generation
 - The roadnet data of the city i.e. `roadnet.txt`
@@ -90,13 +89,13 @@ python visual.py --city <city name> --wb_rate <rate of traffic lights that use W
 ```
 The output of the code will be stored in `/visualization/result/<city name>`, you may open it with your web browser.
 
-### Spider Gaode data
+### Crawling data
 Running the code requires the installation of `schedule` and `selenium`, you're also required to install `Chromedriver` and `Chrome`.
 ```
-cd spider_gaode
+cd crawl
 python gaode.py
 ```
-This script will download the actual time speed information of 100 cities in China from Gaode every 10 minutes from 6 a.m. to 10 p.m. everyday after it's activated. The output will be stored in `/log/<date>`. We also offered a data process program to analyze the mean and std of the spidered data, you may run the code by the following command.
+This script will download the actual time speed information of 100 cities in China from Gaode every 10 minutes from 6 a.m. to 10 p.m. everyday after it's activated. The output will be stored in `/log/<date>`. We also offered a data process program to analyze the mean and std of the crawled data, you may run the code by the following command.
 ```
 python dataprocess.py --mod <rush or normal>
 ```

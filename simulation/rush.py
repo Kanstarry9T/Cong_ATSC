@@ -10,6 +10,7 @@ from utility.world import World
 from metric import TravelTimeMetric, ThroughputMetric
 from metric.travel_distance import TravelDistanceMetric
 from metric.point_count import pointoutMetric
+from metric.travel_carbon import CarbonMetric
 import os
 import json
 from agent.myagent_set import WebsterAgent
@@ -121,6 +122,7 @@ def run(city_name):
     metric = [
         TravelDistanceMetric(world),
         ThroughputMetric(world),
+        CarbonMetric(world)
         # pointoutMetric(world),
     ]
 
@@ -131,6 +133,10 @@ def run(city_name):
     speed_record = []
     out_num_record = []
     point_num_record = []
+    
+    carbon_portion = []
+    carbon_emission = []
+    
     dic_actions = {} 
 
     for i in range(args.steps):
@@ -148,6 +154,10 @@ def run(city_name):
             speed_record.append(speed)
             out_num = env.metric[1].update(done=False)
             out_num_record.append(out_num)
+            
+            portion, carbon = env.metric[2].update(done=False)
+            carbon_portion.append(portion)
+            carbon_emission.append(carbon)
 
         # recording the number of vehicles coming out from each intersection
         '''
@@ -179,9 +189,10 @@ def run(city_name):
         
 
 if __name__ == "__main__":
-    cities = os.listdir('./dataset_rush')
-    pool = mp.Pool(25)
-    pool.map(run, cities)
-    pool.close()
-    pool.join()
+    # cities = os.listdir('./dataset_rush')
+    # pool = mp.Pool(25)
+    # pool.map(run, cities)
+    # pool.close()
+    # pool.join()
+    run('guilin')
     print('All finish!')

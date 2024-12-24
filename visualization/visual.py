@@ -21,11 +21,11 @@ def read_txt(file):
     return lines
 
 def getcolor(rate):
-    color0 = '\'#FAEBDD\''
-    color1 = '\'#FF4500\''
-    color2 = '\'#F58860\''
-    color3 = '\'#CB1B4F\''
-    color4 = '\'#03051A\''
+    color0 = '\'#CC0000\''
+    color1 = '\'#FF9900\''
+    color2 = '\'#B2CC00\''
+    color3 = '\'#66B200\''
+    color4 = '\'#009900\''
     if rate < 0:
         color = color0
     if rate >= 0 and rate < 0.04:

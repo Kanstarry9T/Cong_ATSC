@@ -76,12 +76,14 @@ docker cp -r CONTAINER:/simulation/log_rush ./
 ```
 
 ## Visualization
-We recorded 6 city's intersection traffic information for visualization. Firstly, activate a conda environment as soon as it has installed `numpy` and `pandas`. Run the following command to get an HTML result of the intersection flow condition in different rates of Webster method applied to traffic lights.
+We recorded 6 city's intersection traffic information for visualization. Firstly, activate a conda environment as soon as it has installed `numpy` and `pandas`. Run the following command to get an HTML result of the intersection flow condition in different rates of Webster method applied to traffic lights. The figure will show how much traffic increases when Webster method is applied comparing to fixed traffic lights.
 ```
 cd visualization
 python visual.py --city <city name> --wb_rate <rate of traffic lights that use Webster method>
 ```
-The output of the code will be stored in `/visualization/result/<city name>` in HTML form, you may open it with your web browser.
+The output of the code will be stored in `/visualization/result/<city name>` in HTML form, you may open it with your web browser. Below is an visualization example of Shanghai.
+
+![](./figs/visual-example.png)
 
 ## Crawling
 Running the code requires the installation of `schedule` and `selenium`, you're also required to install `Chromedriver` and `Chrome`.

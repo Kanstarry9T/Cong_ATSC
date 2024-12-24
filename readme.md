@@ -4,6 +4,9 @@
 
 ![](https://img.shields.io/github/stars/Kanstarry9T/Cong_ATSC?style=social)
 </div>
+<br>
+
+![](./figs/result.png)
 
 ## Generation
 
